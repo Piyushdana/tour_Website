@@ -1,0 +1,167 @@
+//functionality//
+.section-tour{
+  background-color:   gray;
+  padding: 30rem 0 40rem 0;
+  margin-top: -10rem;
+}
+
+.card{
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 30rem;
+
+
+  &-side{
+    height: 30rem;
+    transition: all .5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 4rem 4rem rgba($color:  black, $alpha: 15);
+
+
+    &--front{
+      background-color:  white;
+    }
+
+    &--back{
+      transform: rotateY(180deg);
+
+      &-1{
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730 /*#2998ff, #5643fa #7ed56f #28b485*/);
+      }
+      &-3{
+        background-image:  linear-gradient(to right bottom, #2998ff, #5643fa );
+      }
+    }
+  }
+
+  &:hover &-side--front{
+    transform: rotateY(-180deg);
+  }
+  &:hover &-side--back{
+    transform: rotateY(0deg);
+  }
+
+  //front side styling//
+  &-picture{
+    background-size: cover;
+    height: 14rem;
+     
+    -webkit-clip-path: polygon(0 0,100% 0,100% 88%,0 100%);
+    clip-path: polygon(0 0,100% 0,100% 88%,0 100%);
+    &--1{
+      background-blend-mode: color;
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(https://swall.teahub.io/photos/small/38-389837_ultra-hd-camping-wallpaper-hd.jpg);
+    }
+    &--2{
+      background-image: url();
+    }
+    &--3{
+      background-blend-mode:  hue;
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa ),url(https://www.intrepidtravel.com/adventures/wp-content/uploads/2019/05/DSC08654-e1556258887409.jpg);
+    }
+  }
+
+      &-heading{
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: white;
+        text-transform: uppercase;
+        position: absolute;
+        top: 35%;
+        right: 3%;
+        text-align: right;
+        width: 60%;
+      }
+
+      &-heading-span--1{
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        padding: 0.2rem;
+        background-image: linear-gradient(to right, rgba(#ffb900, 0.84),rgba(#ff7730, 0.84) );
+      }
+
+      &-heading-span--3{
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        padding: 0.2rem;
+        background-image: linear-gradient(to right, rgba(#2998ff,0.84),rgba(#5643fa, 0.84) );
+      }
+
+    &-details{
+       
+      ul{
+         list-style: none;
+        width: 80%;
+        margin: 0 auto;
+      }
+          li{
+            font-size: 1.1rem;
+            text-align: center;
+             
+            padding: 0.8rem;
+            text-transform: uppercase;
+            
+            &:not(:last-child){
+              border-bottom: 2px solid #eee;
+            }
+
+          }
+    }
+
+    &-cta{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      
+      
+    }
+    &-price--only{
+      font-size: 2rem;
+      text-align: center;
+      margin-top: -10rem;
+      margin-left: 8px;
+      padding: 1rem;
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+
+
+
+       
+    }
+    &-price--value{
+      font-size: 2rem;
+      font-weight:100;
+      text-align: center;
+    }
+    
+    &-btn{
+      display: block;
+      height: 4rem;
+      width: 11rem;
+       transform: translateY(8rem);
+      text-align: center;
+      font-size: 1.5rem;
+       font-weight: 500;
+       background-image: linear-gradient(to right, #ecd609ea, rgba(133, 126, 126, 0.808));
+      text-decoration: none;
+      padding: 1rem;
+      color: black;
+      background-color: white;
+      border-radius: 2rem;
+      transition: all .2s;
+
+      &:hover,
+      &:active{
+         
+        color: green;
+      }
+    }
+}

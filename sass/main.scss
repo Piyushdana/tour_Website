@@ -1,0 +1,378 @@
+ @import "sass/grisd.scss";
+ @import "sass/mixins.scss";
+ @import "sass/footer.scss";
+@import  "sass/tour.scss"; 
+@import "sass/navigation.scss";
+@import "sass/popup.scss";
+@import "sass/stories.scss"; 
+@import "sass/booking.scss";
+ $color-primary:#808080; 
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+    
+
+
+    html{
+         
+       
+
+
+      @include respond (tab-lands)  //width<1200
+      {
+        font-size: 56.25%;
+
+      }
+      @include respond (tab-port)   //width<900
+      {
+        font-size: 50%; }
+
+
+      @include respond (big-desktop){
+        font-size: 75%;
+        
+      }
+
+    }
+
+
+  
+  body { 
+    clip-path: polygon(0 100 0 100 0 100 0 100); 
+
+    @include respond (phone){
+      padding:  0%;
+    }
+    
+  }
+  
+  .header {
+    height: 95vh;
+    background-image: url(https://thumbs.dreamstime.com/b/asia-skyline-travel-tourism-background-asian-landmarks-outline-vector-illustration-139371563.jpg);
+    padding-bottom: 30rem;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
+
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); 
+  
+    
+  
+  }
+  
+  .logo-box > img {
+    height: 80px;
+    margin-left: 15px; }
+    
+  .heading {
+    margin-top: 115px;
+    color: whitesmoke;
+    font-family: serif;
+    font-size: 24px;
+    font-weight:  700;
+    text-decoration:$color-primary; 
+   
+    &>h1{
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 62px;
+    text-decoration: solid;
+    font-weight: 500;
+    margin-left: 50px;
+    text-decoration:$color-primary;
+    animation-name: moveinright;
+    animation-duration: 1s;
+
+    @include respond(phone){
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
+    }
+    
+    &>h2{
+      font-weight: 500;
+      margin-top: 3.5px;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 8.5px;
+      animation-name: moveinleft;
+      animation-duration: 1s; 
+
+      @include respond(phone){
+        letter-spacing: .5rem;
+        
+      }
+
+    }
+    & > .discover-btn {
+      margin-top: 13px;
+      display: inline-block;
+      margin-left: 40rem;
+      background-color: white;
+      border-radius: 3rem;
+      text-decoration: none;
+      height: 55px;
+      width: 14rem;
+      font-size: 21px;
+      animation-name: moveintop;
+      animation-duration: 1s;
+      font-family: serif; 
+      transition: all .2s;
+
+
+      &:hover
+       {
+        transform: translateY(-3px);
+      }
+      &:active{
+        transform: translateY(3px);
+      }
+  } 
+  
+   
+  
+    
+  
+  }
+  .menu > ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: 18rem;
+    text-decoration: none;
+  
+    &>li{
+      width: 15rem;
+      margin-top: -21rem;
+    }
+   
+    &> li > a {
+      font-family: serif;
+      font-size: 21px;
+      text-transform: uppercase;
+      color: black; }
+  }
+
+
+  
+ @keyframes moveinleft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px); }
+    70% {
+      transform: translate(10px); }
+    100% {
+      opacity: 1;
+      transform: translateX(0px); } }
+  
+  @keyframes moveinright {
+    0% {
+      opacity: 0;
+      transform: translateX(100px); }
+    70% {
+      transform: translateX(-10px); }
+    100% {
+      opacity: 1;
+      transform: translateX(0px); } }
+  
+  @keyframes moveintop {
+    0% {
+      opacity: 0;
+      transform: translateY(100px); }
+    /*70%{
+          transform: translate(10px);
+      }*/
+    100% {
+      opacity: 1;
+      transform: translateY(0px); } }
+  
+
+
+.section-about{
+  background-color:lightgray;  
+  padding: 25rem 0 ;  
+  margin-top: -40vh;
+  ;
+}  
+
+.heading-secondary{
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display:inline-block; 
+  background-image: linear-gradient(to right, #7ed56f,#28b485);
+  -webkit-background-clip: text;
+  color: transparent; 
+  transition: all .2s;
+  text-align: center;
+
+  @include respond(tab-port){
+    font-size: 3rem;
+  }
+  
+  @include respond(phone){
+    font-size: 2.5  rem;
+  }
+ 
+
+  &:hover{ 
+    transform: skewY(6deg) skewx(2deg) ;
+    text-shadow: .2rem .5rem .4rem rgba($color: #000000, $alpha: .2); 
+  }
+}
+.centre-text{ 
+  text-align: center; 
+}
+
+
+.margin-bottom-8{
+  margin-bottom: 6rem; 
+}
+
+
+ 
+.paragraph{
+font-size: 1.2rem;
+
+&:not(:last-child){
+  margin-bottom: 2rem;
+}
+
+
+}
+.margin-bottom-2{
+  margin-bottom: 0.8rem;
+
+}
+
+
+.learn-btn{
+  &:link,
+  &:visited{
+    font-size: 1.2rem;
+ color: #28b485;
+ display: inline-block;
+ text-decoration: none;
+ border-bottom: 2px solid #1bb481; 
+ transition:  all .2s;
+}
+  &:hover{
+    background-color: #28b485;
+    color: white;
+    box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.6);
+    transform: translateY(-2px); 
+  }
+
+  &:active{
+    box-shadow: 0 .5rem 1rem rgba($color: #000000, $alpha: 0.2);
+    transform: translateY(0); 
+  }
+}
+
+.composition{ 
+ position: relative;
+ 
+  &-pictures{
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 2.0);
+    position: absolute;
+   z-index: 10;
+    transition: all .2s;
+    outline-offset: 1rem;
+  }
+
+  &-p1{ 
+    left: 0; 
+    top:-2rem;  
+    &:hover { 
+      outline: 1.2rem solid #28b485;
+     transform: scale(1.05) translateY(-1rem);
+     box-shadow: 0 2.4rem 4rem rgba($color: #000000, $alpha: .5);   
+     z-index: 20;
+   }  
+   
+ }
+   &-p2{ 
+    right: 0;
+    top: 1rem; 
+     &:hover { 
+      outline: 1.2rem solid #28b485;
+     transform: scale(1.05) translateY(-1rem);
+     box-shadow: 0 2.4rem 4rem rgba($color: #000000, $alpha: .5);   
+     z-index: 20;
+     } 
+  
+   }
+   &-p3{
+    left: 18%;
+    top:7rem;    
+     &:hover { 
+      outline: 1.2rem solid #28b485; 
+     transform: scale(1.09) translateY(-1rem);
+     box-shadow: 0 2.4rem 4rem rgba($color: #000000, $alpha: .5);   
+     z-index: 20;
+     } 
+   
+ }
+ &:hover &-pictures:not(:hover){
+  transform: scale(2rem);
+}
+    
+} 
+
+.features{ 
+  padding: 20rem 0;
+  background-image: linear-gradient(to right , #59d659 , #9cd337 );
+  margin-top: -5.8rem;
+  transform: skewY(-7deg);
+
+  & > *{
+    transform: skewY(7deg);
+  }
+  
+ 
+}    
+.heading-feature{
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  font-weight: 900;
+}
+
+.feature-box{
+background-color: rgba($color:  #fff, $alpha: .8);
+background-size: cover;
+height: 22rem; 
+width: 18rem;
+margin-left: -2rem;
+padding: 2.5rem;
+text-align: center;
+border-radius: 4px;
+box-shadow: 0 1.5rem 2rem rgba($color: #000000, $alpha: 1.5);
+transition: transform .3s;
+
+    
+    .feature-text{
+        font-size: 1.2rem;
+    }
+
+    &:hover{
+      transform: translateY(-1rem);
+    }
+    &:active{
+      transform: translateY(0.5rem);
+    }
+
+   .icon{
+      font-size: 4rem; 
+      background-image: linear-gradient(to right, #7ed56f,#22c264);
+      -webkit-background-clip: text;
+      color: transparent; 
+    }
+}
+
+ 

@@ -1,0 +1,178 @@
+    .book{
+        padding: 15rem 0;
+        background-image: linear-gradient(to right,  lightgray, rgba(34, 31, 31, 0.459) );
+    }
+    
+
+    .book-sec{
+        width:  90%;
+        background-image:linear-gradient( 105deg,  lightgray 50%,  transparent 0%),url(https://cdn.pixabay.com/photo/2020/04/22/12/06/adventure-5077760_960_720.jpg);
+         margin: auto;
+        background-size: cover;
+        height: 30rem;
+        border-radius: 1rem;
+        box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 8);
+
+
+        &-form{
+            width: 50%;
+            padding: 6rem;
+        }
+    }
+
+    .heading-form{
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        display:inline-block; 
+        background-image: linear-gradient(to right, #7ed56f,#28b485);
+        -webkit-background-clip: text;
+        color: transparent; 
+        transition: all .2s;
+        text-align: center;
+        margin-top: 2rem;
+        margin-left: 6.5rem;
+        margin-bottom: 3rem;
+        
+    
+        &:hover{ 
+        transform: skewY(6deg) skewx(2deg) ;
+        text-shadow: .2rem .5rem .4rem rgba($color: #000000, $alpha: .2); 
+        }
+    }
+    .form{
+
+            &-group:not(last-child){
+                margin-bottom: 1rem;
+                margin-left: 3rem;
+            }
+
+            &-input{
+                font-size:1.2rem;
+                padding:0.8rem 2rem;
+                font-family: inherit;
+                border: none;
+                border-radius: 0.5rem;
+                border-bottom: 4px solid  transparent ;
+                width: 43%;
+                color: inherit;
+                display: block;
+
+             &:focus{
+                outline: none;
+                box-shadow: 0 1.5rem 2rem rgba($color: #1f1d1d8f, $alpha: .5);
+                border-bottom: 4px solid rgba($color:  green, $alpha: 9);
+        
+        
+                &::-webkit-input-placeholder{
+                    color: darkgrey;
+                }
+             } 
+        
+             &:focus:invalid{
+             border-bottom: 3px solid orangered;
+              }
+
+            }
+
+
+            &-lable{
+            display: flex;
+            display: block;
+            margin-left: 2rem;
+            
+            color: darkgrey;
+            font-weight:  500;
+            transition: all 0.3s;
+
+            }
+            &-input:placeholder-shown+&-lable{
+                opacity: 0;
+                visibility: hidden;
+                transform: -4rem;
+
+            }
+            
+        &-radio-group{
+                width: 20%;
+                display: inline-block;
+                margin-left: 2.5rem;
+                margin-top: 1.6rem;
+        }
+
+        &-radio-input{
+            display: none;
+        }
+
+        &-radio-lable{
+            font-size: 1.3rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        &-radio-button{
+            height: 1.8rem;
+            width: 1.8rem;
+            border: 0.2rem solid green;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            margin-left: -2.5rem;
+            left: 0;
+            top: -2px;
+            
+
+            &::after{
+                content: "";
+                display: block;
+                height: 1rem;
+                width: 1rem;
+                border-radius: 50%;
+                background-color: green;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                opacity: 0;
+                
+            }
+
+            
+
+        }
+        &-radio-input:checked + &-radio-lable &-radio-button::after{
+            opacity: 1;
+        }
+
+        form-radio-btn{
+            transform: translateX(-22rem) translateY(5rem);
+            height: 2rem;
+            width: 10rem;
+            background-color: green;
+            color: white;
+            border-radius: 0.5rem;
+            border: none;
+            
+        }
+
+        .next-button{
+        height: 2.5rem;
+        width: 136px;
+        background-color: green;
+        margin-top: 3rem;
+        margin-left: -2.5rem;
+        color: white;
+        border-radius: 1rem;
+        border: none;
+        transition: all .3s;
+        display: inline-block;
+        box-shadow: 0  0.8rem 2rem rgba($color: #000000, $alpha: 2 );
+        &:hover{
+            transform: translateY(-.3rem);
+        }
+        &:active{
+            transform: translateY(.2rem);
+        }
+    }
+        
+}
